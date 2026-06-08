@@ -1,46 +1,55 @@
 # Scavenger Extra Trials
 
-Scavenger Extra Trials is an unofficial NeoForge add-on for Scavenger.
+Scavenger Extra Trials is an unofficial add-on for the Scavenger mod.
 
-It adds extra modifiers to the original Scavenger modifier wheel. In multiplayer, install it on both the client and the server.
+It adds extra challenge modifiers to the original Scavenger modifier wheel. The goal is simple: make short Scavenger runs more chaotic, risky, and replayable without editing the original Scavenger jar.
 
 ## Requirements
 
-- Minecraft 1.21.11+
-- NeoForge 21.11+
-- Scavenger
-- Architectury API
-- ShatterLib
+* Minecraft 1.21.11+
+* NeoForge 21.11+
+* Scavenger 1.0.2+
+* Architectury API
+* ShatterLib
+
+Install this mod together with all required dependencies.
 
 ## Modifiers
 
-- `scavenger_extra_trials:closing_border`
-- `scavenger_extra_trials:route_pressure`
-- `scavenger_extra_trials:glass_heart`
-- `scavenger_extra_trials:upside_down`
-- `scavenger_extra_trials:enderman_blood`
-- `scavenger_extra_trials:hot_potato`
-- `scavenger_extra_trials:repelling_loot`
-- `scavenger_extra_trials:spicy_start`
+* `closing_border` — the world border starts to close in during the run.
+* `route_pressure` — staying in the same chunk for too long becomes dangerous.
+* `glass_heart` — heavy damage can temporarily reduce maximum health.
+* `upside_down` — flips the world view while keeping the UI usable.
+* `enderman_blood` — taking damage can teleport the player and drop equipment.
+* `scrambled_controls` — movement controls can become temporarily mixed up.
+* `hot_potato` — holding the same item for too long makes it overheat.
+* `repelling_loot` — dropped items try to move away from the player.
+* `spicy_start` — starts the run in the Nether with short protection and portal instability.
 
 ## Commands
 
-- `/scavengerextra modifier list`
-- `/scavengerextra modifier set <modifier_id>`
-- `/scavengerextra modifier get`
-- `/scavengerextra modifier random`
-- `/scavengerextra modifier testfire [modifier_id]`
-- `/scavengerextra sync`
-- `/scavengerextra win reset`
-- `/scavengerextra status`
-- `/scavengerextra reload`
+Operator-only test commands:
 
-`closing_border` uses real Overworld world border pressure. Default balanced values are start 1024, minimum 256, first pulse after 80 ticks, shrink delay 200 ticks, and shrink duration 2400 seconds. With `fastTestingDefaults=true`, it uses start 768, minimum 256, delay 120 ticks, and shrink duration 1200 seconds.
+```mcfunction
+/scavengerextra modifier list
+/scavengerextra modifier set <modifier_id>
+/scavengerextra modifier get
+/scavengerextra modifier random
+/scavengerextra modifier testfire
+/scavengerextra sync
+/scavengerextra win reset
+```
 
-`route_pressure` forces the player to leave the current chunk within 15 seconds and throttles persistent warnings. `enderman_blood` safely teleports the player and drops configured armor/hand items without deleting them.
+These commands are mainly for testing and debugging modifiers during development.
 
-`hot_potato` now tracks main hand and offhand separately, warns after 25 ticks, and overheats after 60 ticks. `repelling_loot` is fast smooth anti-magnet loot: nearby drops accelerate away on X/Z through velocity only, keep natural falling, and remain collectible inside the inner pickup radius. `glass_heart` temporarily reduces max health after heavy damage and restores stacks over time.
+## Multiplayer
 
-`upside_down` rolls only the world camera while leaving GUI, chat, inventory, and menus normal. `spicy_start` sends the player to a safe Nether position once, grants hidden short protection windows, and adds a portal glitch when leaving the Nether.
+Install the mod on both the client and the server.
 
-Fabric dependency jars were found in the provided profile archive, but the project remains NeoForge-only until a dedicated multi-loader module is added.
+All players should use the same mod version.
+
+## Notes
+
+This project is not affiliated with the original Scavenger author.
+
+The old NeoForge MDK template license is kept separately as `NEOFORGE_MDK_TEMPLATE_LICENSE.txt`. The Scavenger Extra Trials project itself is licensed under GPL-3.0-only.
