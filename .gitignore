@@ -1,0 +1,14 @@
+.gradle/
+build/
+run/
+logs/
+crash-reports/
+
+*.jar
+*.class
+
+.idea/
+.vscode/
+*.iml
+
+libs/

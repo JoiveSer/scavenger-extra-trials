@@ -1,0 +1,38 @@
+## 1.0.0
+
+- Initial clean build.
+- Added the Scavenger Extra Trials modifiers.
+- Added Scavenger wheel registration.
+- Added `/scavengerextra` commands.
+- Added testfire command base.
+- Added config and lang files.
+- Implemented `closing_border`.
+- Implemented `route_pressure`.
+- Added testfire handlers for `closing_border` and `route_pressure`.
+- Rebalanced `closing_border` defaults and fast testing defaults.
+- Throttled persistent `route_pressure` warnings.
+- Implemented `enderman_blood`, including safe same-dimension teleport, optional equipment drops, particles, sounds, cooldown, and testfire.
+- Implemented `hot_potato`, including held item heat tracking, warning, burn/water behavior, reset rules, and testfire.
+- Added `/scavengerextra sync` and `/scavengerextra win reset`.
+- Updated EN/RU/UK language entries for new mechanic messages.
+- Removed the discarded hand-disruption modifier from active registration, commands, language, and docs.
+- Updated `enderman_blood` with separate main hand and offhand drop config.
+- Updated `hot_potato` to track main hand and offhand independently with faster timing.
+- Implemented `repelling_loot`.
+- Implemented `glass_heart`.
+- Added testfire handlers for `repelling_loot` and `glass_heart`.
+- Ported/fixed `upside_down` camera roll from the previous project.
+- Improved `repelling_loot` movement strength, velocity cap, and particle throttling.
+- Implemented `spicy_start`.
+- Added testfire handlers for `upside_down` and `spicy_start`.
+- Removed the discarded resonance modifier from active registration, commands, language, and docs.
+- Updated `repelling_loot` to preserve Y velocity and cap only horizontal speed.
+- Improved `repelling_loot` movement.
+- Strengthened repelling_loot movement.
+- Removed paired_goal.
+- Removed butter_fingers.
+- Reworked repelling_loot movement.
+- Kept enderman_blood active.
+- Removed scrambled_controls.
+- Shortened modifier descriptions for roulette readability.
+- Fixed missing client event class in the built jar.

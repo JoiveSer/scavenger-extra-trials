@@ -1,0 +1,45 @@
+license="${mod_license}"
+
+[[mods]]
+modId="${mod_id}"
+version="${mod_version}"
+displayName="${mod_name}"
+authors="joive"
+description='''
+Unofficial NeoForge add-on for Scavenger. Adds extra modifiers to the original Scavenger wheel.
+'''
+
+[[dependencies.${mod_id}]]
+    modId="neoforge"
+    type="required"
+    versionRange="[${neo_version},)"
+    ordering="NONE"
+    side="BOTH"
+
+[[dependencies.${mod_id}]]
+    modId="minecraft"
+    type="required"
+    versionRange="${minecraft_version_range}"
+    ordering="NONE"
+    side="BOTH"
+
+[[dependencies.${mod_id}]]
+    modId="scavenger"
+    type="required"
+    versionRange="[1.0.2,)"
+    ordering="AFTER"
+    side="BOTH"
+
+[[dependencies.${mod_id}]]
+    modId="architectury"
+    type="required"
+    versionRange="[19.0.1,)"
+    ordering="AFTER"
+    side="BOTH"
+
+[[dependencies.${mod_id}]]
+    modId="shatterlib"
+    type="required"
+    versionRange="[0.6.0.8,)"
+    ordering="AFTER"
+    side="BOTH"
