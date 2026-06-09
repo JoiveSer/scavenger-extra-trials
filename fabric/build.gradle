@@ -1,0 +1,56 @@
+plugins {
+    id 'fabric-loom' version '1.14-SNAPSHOT'
+    id 'maven-publish'
+}
+
+version = rootProject.mod_version
+group = rootProject.mod_group_id
+
+def modVersion = rootProject.mod_version
+def minecraftVersion = rootProject.minecraft_version
+def fabricLoaderVersion = rootProject.fabric_loader_version
+def fabricApiVersion = rootProject.fabric_api_version
+
+base {
+    archivesName = "${rootProject.mod_id}-fabric"
+}
+
+repositories {
+    mavenCentral()
+    maven { url = 'https://maven.fabricmc.net' }
+    maven { url = 'https://maven.architectury.dev' }
+}
+
+dependencies {
+    minecraft "com.mojang:minecraft:${minecraftVersion}"
+    mappings loom.officialMojangMappings()
+
+    modImplementation "net.fabricmc:fabric-loader:${fabricLoaderVersion}"
+    modImplementation "net.fabricmc.fabric-api:fabric-api:${fabricApiVersion}"
+    modImplementation files("../libs/architectury-19.0.1-fabric.jar")
+    modImplementation files("../libs/scavenger-fabric-1.0.2.jar")
+    modImplementation files("../libs/ShatterLib-FABRIC-0.6.0.8+1.21.11.jar")
+}
+
+processResources {
+    inputs.property 'mod_version', modVersion
+    inputs.property 'minecraft_version', minecraftVersion
+    inputs.property 'fabric_loader_version', fabricLoaderVersion
+
+    filesMatching('fabric.mod.json') {
+        expand([
+                mod_version          : modVersion,
+                minecraft_version    : minecraftVersion,
+                fabric_loader_version: fabricLoaderVersion
+        ])
+    }
+}
+
+java {
+    toolchain.languageVersion = JavaLanguageVersion.of(21)
+}
+
+tasks.withType(JavaCompile).configureEach {
+    options.encoding = 'UTF-8'
+    options.release = 21
+}

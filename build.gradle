@@ -179,3 +179,13 @@ idea {
         downloadJavadoc = true
     }
 }
+
+tasks.register('copyFabricJarToRootLibs', Copy) {
+    dependsOn ':fabric:remapJar'
+    from(project(':fabric').tasks.named('remapJar').flatMap { it.archiveFile })
+    into(layout.buildDirectory.dir('libs'))
+}
+
+tasks.named('build') {
+    dependsOn tasks.named('copyFabricJarToRootLibs')
+}

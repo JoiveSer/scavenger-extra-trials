@@ -36,3 +36,4 @@
 - Removed scrambled_controls.
 - Shortened modifier descriptions for roulette readability.
 - Fixed missing client event class in the built jar.
+- Added Fabric build target alongside the existing NeoForge build.
