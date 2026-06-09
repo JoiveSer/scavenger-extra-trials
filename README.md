@@ -58,4 +58,4 @@ All players should use the same mod version.
 
 This project is not affiliated with the original Scavenger author.
 
-The old NeoForge MDK template license is kept separately as `NEOFORGE_MDK_TEMPLATE_LICENSE.txt`. The Scavenger Extra Trials project itself is licensed under GPL-3.0-only.
+The Scavenger Extra Trials project is licensed under GPL-3.0-only.
